@@ -21,10 +21,10 @@ let package = Package(
             name: "Google",
             targets: ["Google"]
         ),
-        .library(
-            name: "Facebook",
-            targets: ["Facebook"]
-        ),
+//        .library(
+//            name: "Facebook",
+//            targets: ["Facebook"]
+//        ),
         .library(
             name: "Email",
             targets: ["Email"]
@@ -34,13 +34,15 @@ let package = Package(
         .package(name: "Firebase",
                  url: "https://github.com/firebase/firebase-ios-sdk.git",
                  from: "7.4.0"),
+//        .package(name: "Facebook",
+//                 url: "https://github.com/facebook/facebook-ios-sdk.git",
+//                 from: "9.0.0"),
     ],
     targets: [
         .target(
             name: "Auth",
             dependencies: [
                 .product(name: "FirebaseAuth", package: "Firebase"),
-                .product(name: "GoogleUtilities_UserDefaults", package: "Firebase"),
             ],
             path: "Auth/FirebaseAuthUI",
             exclude: ["Info.plist"],
@@ -55,7 +57,6 @@ let package = Package(
             name: "OAuth",
             dependencies: [
                 .product(name: "FirebaseAuth", package: "Firebase"),
-                .product(name: "GoogleUtilities_UserDefaults", package: "Firebase"),
             ],
             path: "OAuth/FirebaseOAuthUI",
             exclude: ["Info.plist"],
@@ -68,8 +69,7 @@ let package = Package(
         .target(
             name: "Google",
             dependencies: [
-                .product(name: "FirebaseAuth", package: "Firebase"),
-                .product(name: "GoogleUtilities_UserDefaults", package: "Firebase"),
+                "Auth"
             ],
             path: "GoogleAuth/FirebaseGoogleAuthUI",
             exclude: ["Info.plist"],
@@ -79,20 +79,21 @@ let package = Package(
                 .headerSearchPath("./"),
             ]
         ),
-        .target(
-            name: "Facebook",
-            dependencies: [
-                .product(name: "FirebaseAuth", package: "Firebase"),
-                .product(name: "GoogleUtilities_UserDefaults", package: "Firebase"),
-            ],
-            path: "FacebookAuth/FirebaseFacebookAuthUI",
-            exclude: ["Info.plist"],
-            resources: [.process("Resources"), .process("Strings")],
-            publicHeadersPath: ".",
-            cSettings: [
-                .headerSearchPath("./"),
-            ]
-        ),
+//        .target(
+//            name: "Facebook",
+//            dependencies: [
+//                "Auth",
+//                .product(name: "FBSDKLoginKit", package: "facebook-ios-sdk"),
+//                .product(name: "FBSDKCoreKit", package: "facebook-ios-sdk"),
+//            ],
+//            path: "FacebookAuth/FirebaseFacebookAuthUI",
+//            exclude: ["Info.plist"],
+//            resources: [.process("Resources"), .process("Strings")],
+//            publicHeadersPath: ".",
+//            cSettings: [
+//                .headerSearchPath("./"),
+//            ]
+//        ),
         .target(
             name: "Email",
             dependencies: ["Auth"],

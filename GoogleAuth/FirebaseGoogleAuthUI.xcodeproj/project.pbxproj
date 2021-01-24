@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200EB18E25BD48150062CBA3 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 200EB18C25BD48150062CBA3 /* GoogleSignInDependencies.framework */; platformFilter = ios; };
+		200EB18F25BD48150062CBA3 /* GoogleSignInDependencies.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 200EB18C25BD48150062CBA3 /* GoogleSignInDependencies.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		200EB19025BD48160062CBA3 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 200EB18D25BD48150062CBA3 /* GoogleSignIn.framework */; platformFilter = ios; };
+		200EB19125BD48160062CBA3 /* GoogleSignIn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 200EB18D25BD48150062CBA3 /* GoogleSignIn.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		200EB19A25BD48BD0062CBA3 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 200EB19225BD48520062CBA3 /* GoogleSignIn.bundle */; platformFilter = ios; };
 		8D69E4A121DE8CAF00CFA49B /* FirebaseGoogleAuthUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D69E49721DE8CAF00CFA49B /* FirebaseGoogleAuthUI.framework */; };
 		8D69E4A621DE8CAF00CFA49B /* FirebaseGoogleAuthUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D69E4A521DE8CAF00CFA49B /* FirebaseGoogleAuthUITests.m */; };
 		8D69E4A821DE8CAF00CFA49B /* FirebaseGoogleAuthUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D69E49A21DE8CAF00CFA49B /* FirebaseGoogleAuthUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,7 +33,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		200EB18825BD47E90062CBA3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				200EB18F25BD48150062CBA3 /* GoogleSignInDependencies.framework in Embed Frameworks */,
+				200EB19125BD48160062CBA3 /* GoogleSignIn.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		200EB18C25BD48150062CBA3 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
+		200EB18D25BD48150062CBA3 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
+		200EB19225BD48520062CBA3 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
 		8D69E49721DE8CAF00CFA49B /* FirebaseGoogleAuthUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirebaseGoogleAuthUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D69E49A21DE8CAF00CFA49B /* FirebaseGoogleAuthUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebaseGoogleAuthUI.h; sourceTree = "<group>"; };
 		8D69E49B21DE8CAF00CFA49B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -131,6 +154,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200EB18E25BD48150062CBA3 /* GoogleSignInDependencies.framework in Frameworks */,
+				200EB19025BD48160062CBA3 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +170,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		200EB18425BD47E90062CBA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				200EB18D25BD48150062CBA3 /* GoogleSignIn.framework */,
+				200EB18C25BD48150062CBA3 /* GoogleSignInDependencies.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2F1A7A9CC42931C0584896C1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,10 +189,12 @@
 		8D69E48D21DE8CAF00CFA49B = {
 			isa = PBXGroup;
 			children = (
+				200EB19225BD48520062CBA3 /* GoogleSignIn.bundle */,
 				8D69E49921DE8CAF00CFA49B /* FirebaseGoogleAuthUI */,
 				8D69E4A421DE8CAF00CFA49B /* FirebaseGoogleAuthUITests */,
 				8D69E49821DE8CAF00CFA49B /* Products */,
 				2F1A7A9CC42931C0584896C1 /* Pods */,
+				200EB18425BD47E90062CBA3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,6 +270,7 @@
 				8D69E49321DE8CAF00CFA49B /* Sources */,
 				8D69E49421DE8CAF00CFA49B /* Frameworks */,
 				8D69E49521DE8CAF00CFA49B /* Resources */,
+				200EB18825BD47E90062CBA3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -388,6 +425,7 @@
 				8D69E50F21DE8CF000CFA49B /* ic_google@2x.png in Resources */,
 				8D69E50E21DE8CF000CFA49B /* ic_google.png in Resources */,
 				8D69E51021DE8CF000CFA49B /* ic_google@3x.png in Resources */,
+				200EB19A25BD48BD0062CBA3 /* GoogleSignIn.bundle in Resources */,
 				8D69E50D21DE8CF000CFA49B /* FirebaseGoogleAuthUI.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +690,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FirebaseGoogleAuthUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -701,6 +743,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FirebaseGoogleAuthUI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
